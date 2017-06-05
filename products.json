@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Wine 1",
+        "description": "This is a nice wine!",
+        "imgSrc": "images/wine1.jpg",
+        "type": "red"
+    },
+    {
+        "title": "Wine 2",
+        "description": "This is also a nice wine!",
+        "imgSrc": "images/wine2.jpg",
+        "type": "white"
+    }
+]
