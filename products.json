@@ -3,12 +3,14 @@
         "title": "Wine 1",
         "description": "This is a nice wine!",
         "imgSrc": "images/wine1.jpg",
-        "type": "red"
+        "type": "red",
+        "price": 5.0
     },
     {
         "title": "Wine 2",
         "description": "This is also a nice wine!",
         "imgSrc": "images/wine2.jpg",
-        "type": "white"
+        "type": "white",
+        "price": 5.0
     }
 ]

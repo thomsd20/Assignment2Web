@@ -5,13 +5,43 @@ console.log("Loading Cart...");
 // 2. Must be able to add and delete products from cart
 // 3. Save shopping cart list as JSON file
 
+var productsList = {};
+
+$(document).ready(function() {
+    function jsonCallback(json){
+        console.log("JSONCallback: ", json);
+    }
+    $.ajax({
+        url: "products.json",
+        dataType: 'jsonp'
+    });
+
+    $.getJSON("products.json", function(json){
+        console.log("JSON: ", json);
+    });
+    /*$.getJSON("products.json", function(json){
+        var tr;
+        for(var i = 0; i < json.length; i++){
+            tr = $('<tr/>');
+            tr.append("<td>" + json[i].title + "</td>");
+            tr.append("<td>" + json[i].description + "</td>");
+            tr.append("<td>" + json[i].type + "</td>");
+            tr.append("<td>" + json[i].price + "</td>");
+            $('table').append(tr);
+        }
+    });
+    */
+});
+
 function loadProducts(){
     // Load products from JSON file
     readJSONFile("products.json", (json) => {
         var data = JSON.parse(json);
-        data.forEach((product) => {
+        productsList = JSON.parse(json);
+        /*data.forEach((product) => {
 
         });
+        */
     });
 }
 
