@@ -1,0 +1,333 @@
+* {box-sizing:border-box;
+  padding: 0; /*To remove the blank space at the edge of the page*/
+  margin: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;  /*Set the font family for the whole body*/
+
+}
+
+/*CSS for Navbar*/
+/*Set the size of the div of the navigation bar*/
+.nav{
+  width:100%;
+  height:80px;
+}
+
+.nav ul{
+  list-style-type: none;  /*Remove list style*/
+  /*Set the basic style of the navbar*/
+  overflow: hidden;
+  padding-top: 11px;
+  margin: 0;
+  box-shadow: 0px 4px 3px rgba(0,0,0,0.17);
+  font-size: 20px;
+  height: 80px;
+  width:100%;
+  background-color: white;
+  /*Make the navbar fixed on the top of the page even when scrolling*/
+  position: fixed;
+  z-index: 99999;
+}
+
+/*Set the align style of each link of navbar*/
+.nav li{
+  float:left;
+  margin-left: 40px;
+}
+
+/*Set the style of each link of navbar*/
+.nav li a{
+  display: block;
+  color: #ffb266;
+  font-weight:500;
+  text-align: center;
+  padding: 19px 16px;
+  text-decoration: none;
+}
+
+/*When hover, the link color whill change and bottom border will appear with certain delay*/
+.nav li a:hover{
+  color: #FF6911;
+  border-bottom: 5px solid #FF6911;
+  transition: border-bottom color 0.3s;
+}
+.navlinks{
+  width:600px;
+  height:65px;
+  margin: 0px auto;
+}
+/*Set the style of page logo "Queenstown*/
+.logo{
+  width:380px;
+  font-size: 40px;
+  color:#a0a0a0;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.subtitle{
+  padding:5px;
+  text-align: center;
+  color: #F0183C;
+  font-family: 'Limelight', cursive;
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+
+.bg1{
+  margin:0;
+  padding-top: 50px;
+  background: url("images/footer img.jpg");
+  width:100%;
+  height:700px;
+}
+
+.bgmain{
+  background: url("images/grapeswine.jpg") no-repeat center;
+  background-size: cover;
+  margin:0;
+  padding-top: 50px;
+  width:100%;
+  padding-bottom: 100px;
+}
+h1 {
+  display: inline-block;
+  padding: 0 15px;
+  position: relative;
+}
+
+.bgmain h1:before,
+.bgmain h1:after {
+  background: #F0183C;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+    top: 50%;
+  width: 400%;
+}
+.bg1 h1:before,
+.bg1 h1:after {
+  background: #FFB266;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+    top: 50%;
+  width: 400%;
+}
+h1:before {
+  right: 100%;
+}
+
+h1:after {
+  left: 100%;
+}
+
+.hr {
+  overflow: hidden;
+  text-align: center;
+}
+/*CSS for home page slideshow*/
+/*Remove the space between slideshow div and the navbar and place the slideshow div in the middle of the page*/
+.container{
+  width:60%;
+  margin: 0px auto;
+}
+
+/* Set the style of Slideshow container  of each picture*/
+.slideshow-container {
+  max-width: 100%;
+  max-height:1000px;
+  position: relative;
+  margin: auto;
+  border:1px solid white;
+  border-radius: 8px;
+  box-shadow: 8px 6px 10px #606060;
+}
+
+.mySlides {
+    display: none;
+}
+.mySlides img{
+  width:100%;
+  height:400px;
+}
+/* Set the style of Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}  /*Change the opacity at the beginning and the end of the animation*/
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+/*CSS for introduction*/
+/*Set the style of the introduction div*/
+.introduction{
+  width:100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+   /*Place the introduction div in the middle of the page*/
+}
+
+/*Set the style of title and paragraph of introduction*/
+.introduction h2{
+  font-family: 'Kaushan Script', cursive;
+  line-height: 80px;
+}
+
+.introduction p{
+  font-size: 20px;
+  line-height: 50px;
+}
+
+
+
+
+/*CSS for homepage events*/
+/*Set the style of the whole events module*/
+.deals, .deals2{
+  height: 400px;
+  text-align: center;
+  margin: 50px auto;
+  padding: 0px;
+  margin-bottom: 50px;
+}
+/*Set the style of event title*/
+.deals2 h1{
+  color: #FFB266;
+  font-family: 'Limelight', cursive;
+  font-size: 50px;
+}
+
+
+
+
+/*Set the style of each event div*/
+.deal2, .deal{
+  text-decoration: none; /*Remove the default text decoration of link*/
+  color:black;
+  float:left;
+  margin-top: 50px;
+  margin-left: 20px;
+  width:200px;
+  height:400px;
+  text-align: left;
+  background-color: #efefef;
+}
+/*Set the style of paragraph, title and image of each event div*/
+.dealtext{
+  padding: 10px;
+}
+
+
+.deal img, .deal2 img{
+  width:100%;
+}
+/*When hover, each event div will has box shadow effect and scale animation with delay*/
+.deal:hover{
+  border: 3px solid #F0183C;
+  border-radius: 8px;
+  background-color: #F0183C;
+  color: white;
+  transition: border 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.deal2:hover{
+  border: 3px solid #FF6911;
+  border-radius: 8px;
+  background-color: #FF6911;
+  color: white;
+  transition: border 0.2s, color 0.2s, background-color 0.2s;
+}
+
+/*CSS for footer*/
+/*Set the style of the whole footer div*/
+.footer{
+  width:100%;
+  height: 100px;
+  margin:0;
+  background-color: #FF6911;
+  bottom: 0;
+}
+/*Set the style of links in the footer*/
+.footerlinks{
+  margin:0 auto;
+  width:100%;
+  height: 100px;
+}
+.footerlinks a{
+  float: left;
+  color:white;
+  margin-left: 100px;
+  margin-top: 40px;
+  text-decoration: none;
+}
+/*When hover, the links text will be underlined*/
+.footerlinks a:hover{
+  text-decoration: underline;
+}
+/*Set the style of footer copyright text*/
+.footerlinks p{
+  float: left;
+  color:white;
+  margin-left: 200px;
+  margin-top: 40px;
+}
+
+
+/*CSS for signup page*/
+/*Set the style of the whole signup form*/
+.signup{
+  width: 300px;
+  height: 500px;
+  margin:100px auto;
+}
+/*Set the style of the 'submit' button*/
+.signup button{
+  margin-top: 20px;
+}
+/*Set the style of each input form*/
+.form{
+  margin-top: 50xp;
+}
