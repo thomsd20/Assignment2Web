@@ -14,6 +14,10 @@ app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/products', (request, response) => {
+    response.sendFile(path.join(__dirname + '/products.html'));
+});
+
 app.listen(port, (err) => {
     if(err){
         return console.log('something bad happened', err);
