@@ -1,21 +1,31 @@
-// content of index.js
 const express = require('express');
 const app = express();
 const path = require("path");
 const port = 3000;
 
-//app.use("/styles", express.static(__dirname + '/styles'));
-//app.use("/scripts", express.static(__dirname + '/scripts'));
-//app.use("/images", express.static(__dirname + '/images'));
+var products = require('./scripts/products');
+
 app.use("/", express.static(__dirname));
 
 app.get('/', (request, response) => {
-    //response.send("Hello from express!");
     response.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/products', (request, response) => {
     response.sendFile(path.join(__dirname + '/products.html'));
+});
+
+app.set('json spaces', 4);
+// Products data route
+app.get('/productdata', (request, response) => {
+    response.setHeader('Content-Type', 'application/json');
+    var prod = products.loadProducts();
+    console.log("prod: ", module.exports.productJson);
+    response.send(JSON.stringify(prod));
+});
+
+app.get('/cart', (request, response) => {
+    response.sendFile(path.join(__dirname + '/cart.html'));
 });
 
 app.listen(port, (err) => {

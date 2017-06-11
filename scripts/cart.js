@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 console.log("Loading Cart...");
 
 // Cart needs to
@@ -8,40 +10,14 @@ console.log("Loading Cart...");
 var productsList = {};
 
 $(document).ready(function() {
-    function jsonCallback(json){
-        console.log("JSONCallback: ", json);
-    }
-    $.ajax({
-        url: "products.json",
-        dataType: 'jsonp'
-    });
-
-    $.getJSON("products.json", function(json){
-        console.log("JSON: ", json);
-    });
-    /*$.getJSON("products.json", function(json){
-        var tr;
-        for(var i = 0; i < json.length; i++){
-            tr = $('<tr/>');
-            tr.append("<td>" + json[i].title + "</td>");
-            tr.append("<td>" + json[i].description + "</td>");
-            tr.append("<td>" + json[i].type + "</td>");
-            tr.append("<td>" + json[i].price + "</td>");
-            $('table').append(tr);
-        }
-    });
-    */
+    loadProducts();
 });
 
 function loadProducts(){
-    // Load products from JSON file
-    readJSONFile("products.json", (json) => {
-        var data = JSON.parse(json);
-        productsList = JSON.parse(json);
-        /*data.forEach((product) => {
-
-        });
-        */
+    fs.readFile('../products.json', 'utf-8', (err, data) => {
+        if (err) throw err;
+        productsList = JSON.parse(data);
+        console.log("Products Loaded from file: ", productsList);
     });
 }
 
