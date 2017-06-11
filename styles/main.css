@@ -3,9 +3,14 @@
   margin: 0;
 }
 
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body{
     font-family: 'Open Sans', sans-serif;  /*Set the font family for the whole body*/
-
 }
 
 /*CSS for Navbar*/
@@ -14,6 +19,7 @@ body{
   width:100%;
   height:80px;
 }
+
 
 .nav ul{
   list-style-type: none;  /*Remove list style*/
@@ -55,7 +61,6 @@ body{
 }
 .navlinks{
   width:600px;
-  height:65px;
   margin: 0px auto;
 }
 /*Set the style of page logo "Queenstown*/
@@ -64,6 +69,25 @@ body{
   font-size: 40px;
   color:#a0a0a0;
   font-family: 'Kaushan Script', cursive;
+}
+
+.cart{
+  margin-left: 300px;
+  margin-top: 10px;
+  width:100px;
+  float:left;
+}
+
+#btn-info{
+  background-color: white;
+  color:#ffb266;
+  border-color: #ffb266;
+  border-width: 2px;
+}
+#btn-info:hover{
+  background-color: #ffb266;
+  color:white;
+  border-width: 0px;
 }
 
 .subtitle{
@@ -79,13 +103,13 @@ body{
 .bg1{
   margin:0;
   padding-top: 50px;
-  background: url("/images/footer img.jpg");
+  background: url("images/footer img.jpg");
   width:100%;
   height:700px;
 }
 
 .bgmain{
-  background: url("/images/grapeswine.jpg") no-repeat center;
+  background: url("images/grapeswine.jpg") no-repeat center;
   background-size: cover;
   margin:0;
   padding-top: 50px;
@@ -137,68 +161,6 @@ h1:after {
   margin: 0px auto;
 }
 
-/* Set the style of Slideshow container  of each picture*/
-.slideshow-container {
-  max-width: 100%;
-  max-height:1000px;
-  position: relative;
-  margin: auto;
-  border:1px solid white;
-  border-radius: 8px;
-  box-shadow: 8px 6px 10px #606060;
-}
-
-.mySlides {
-    display: none;
-}
-.mySlides img{
-  width:100%;
-  height:400px;
-}
-/* Set the style of Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  position: absolute;
-  top: 50%;
-  margin-top: -22px;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}  /*Change the opacity at the beginning and the end of the animation*/
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
 
 /*CSS for introduction*/
 /*Set the style of the introduction div*/
@@ -227,7 +189,6 @@ h1:after {
 /*CSS for homepage events*/
 /*Set the style of the whole events module*/
 .deals, .deals2{
-  height: 400px;
   text-align: center;
   margin: 50px auto;
   padding: 0px;
@@ -251,9 +212,16 @@ h1:after {
   margin-top: 50px;
   margin-left: 20px;
   width:200px;
-  height:400px;
   text-align: left;
   background-color: #efefef;
+}
+
+.deal h2{
+  color: #FF6911;
+}
+
+.deal2 h2{
+  color:#F0183c;
 }
 /*Set the style of paragraph, title and image of each event div*/
 .dealtext{
@@ -280,16 +248,68 @@ h1:after {
   color: white;
   transition: border 0.2s, color 0.2s, background-color 0.2s;
 }
+.category{
+  width:100px;
+  padding: 8px 6px;
+  background-color: white;
+  color: #ffb266;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ffb266;
+  text-decoration: none;
+  text-align: center;
+}
 
+.category:hover{
+  background-color: #ffb266;
+  color:white;
+  transition: color 0.4s, background-color 0.4s;
+}
+.categories{
+  margin:20px auto;
+  width:570px;
+}
+
+.product{
+  text-decoration: none; /*Remove the default text decoration of link*/
+  color:black;
+  float:left;
+  margin-top: 50px;
+  margin-left: 20px;
+  width:17%;
+  background-color: #efefef;
+  padding:1px;
+  border-radius: 8px;
+  border: 2px solid #efefef;
+}
+
+.product img{
+  width:100%;
+}
+.product:hover{
+  border-color: #ff6911;
+  background-color: #FF6911;
+  color: white;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
 /*CSS for footer*/
 /*Set the style of the whole footer div*/
 .footer{
   width:100%;
   height: 100px;
-  margin:0;
+  margin-top:50px;
+  background-color: #FF6911;
+  bottom: 0;
+  position: relative;
+}
+.mainfooter{
+  width:100%;
+  height: 100px;
   background-color: #FF6911;
   bottom: 0;
 }
+
 /*Set the style of links in the footer*/
 .footerlinks{
   margin:0 auto;
@@ -306,6 +326,7 @@ h1:after {
 /*When hover, the links text will be underlined*/
 .footerlinks a:hover{
   text-decoration: underline;
+  color:white;
 }
 /*Set the style of footer copyright text*/
 .footerlinks p{
@@ -330,4 +351,9 @@ h1:after {
 /*Set the style of each input form*/
 .form{
   margin-top: 50xp;
+}
+
+.shoppingCart{
+  width: 90%;
+  margin:50px auto;
 }
