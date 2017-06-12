@@ -1,16 +1,182 @@
 [
     {
-        "title": "Wine 1",
-        "description": "This is a nice wine!",
-        "imgSrc": "images/oyster bay wine.jpg",
-        "type": "red",
-        "price": 5.0
+        "pid":"01",
+		"brand":"Loire Valley",
+		"title": "Comte de la Perriere Sancerre Silex",
+        "description": "Located in the districs of Bannay, Saint-Satur and Vinon, these soils are perhaps where Sauvignon Blanc can best express the symphony of its mineral and grassy aromas and the flinty soils create powerful wines with impressive ageing potential",
+        "imgSrc": "images/01.jpg",
+        "type": "white",
+        "price": 100
     },
     {
-        "title": "Wine 2",
-        "description": "This is also a nice wine!",
-        "imgSrc": "images/oyster bay wine.jpg",
+        "pid":"02",
+		"brand":"Loire Valley",
+		"title": "Domaine Vacheron Belle Dame Sancerre",
+        "description": "Made from Pinot Noir, this wine shows strawberry notes and a pleasing tannic backbone. Although far better known for white wines, the Sancerre appellation is home to a number of top-class producers of red wines.",
+        "imgSrc": "images/02.jpg",
+        "type": "red",
+        "price": 150
+    },
+	{
+        "pid":"03",
+		"brand":"Loire Valley",
+		"title": "Le Manoir Sancerre",
+        "description": "It is run biodynamically by Alphonse Mellot, the vines are picked by hand and the wine is partfermentedin oak vats, giving a fresh intensity that makes it one of Sancerre’s most beautifully balanced white wines.",
+        "imgSrc": "images/03.jpg",
         "type": "white",
-        "price": 5.0
+        "price": 120
+    },
+	{
+        "pid":"04",
+		"brand":"Burgundy",
+		"title": "Louis Jadot, Clos de la Roche",
+        "description": "What a wine! Beautiful savoury nuances where delicate hints of umami complement minerally red and black fruit. Incredible complexity and amazing silky texture.",
+        "imgSrc": "images/04.jpg",
+        "type": "red",
+        "price": 160
+    },
+	{
+        "pid":"05",
+		"brand":"Burgundy",
+		"title": "Domaine Leflaive, Chevalier Montrachet",
+        "description": "It has a huge, intense nose of lime, pears and apricot with aromatic tension and complexity.",
+        "imgSrc": "images/05.jpg",
+        "type": "white",
+        "price": 130
+    },
+	{
+        "pid":"06",
+		"brand":"Burgundy",
+		"title": "Olivier Leflaive, Chevalier Montrachet",
+        "description": "Apple and woodsmoke aromas leap from the glass. The palate is very concentrated, intense and mouthfilling but not heavy.",
+        "imgSrc": "images/06.jpg",
+        "type": "white",
+        "price": 110
+    },
+	{
+        "pid":"07",
+		"brand":"Rhone",
+		"title": "2013 Craggy Range ‘Le Sol’",
+        "description": "Intensively hand managed, the grapes reveal a deep and dark Syrah with purple hues. Le Sol is always aromatically pure with a luscious yet elegant mid-palate and a distinctive fine tannin finish.",
+        "imgSrc": "images/07.png",
+        "type": "red",
+        "price": 138
+    },
+	{
+        "pid":"08",
+		"brand":"Rhone",
+		"title": "Boekenhoutskloof Syrah 2013",
+        "description": "Loads of violets, blackcurrant fruit pastilles, white and black pepper with pastrami adding to the complexity. The purity and depth of fruit, firm velvety tannins and refreshing acidity shows the massive aging potential of this vintage. Textured, composed and seamless in style.",
+        "imgSrc": "images/08.jpg",
+        "type": "red",
+        "price": 80
+    },
+	{
+        "pid":"09",
+		"brand":"Rhone",
+		"title": "2014 CRAGGY RANGE LE SOL",
+        "description": "Deepest red with vibrant purple hue. Expressive cool climate Syrah with lifted notes of violets, fresh boysenberries, sandalwood and a hint of dried, peppered meat.",
+        "imgSrc": "images/09.png",
+        "type": "red",
+        "price": 125
+    },
+	{
+        "pid":"10",
+		"brand":"Piedmont",
+		"title": "Barbaresco DOCG 2010",
+        "description": "A wine of great finess and complexity, flavours of black cherry, violet with spicy notes. Firm tannins and long finish.",
+        "imgSrc": "images/10.jpg",
+        "type": "red",
+        "price": 300
+    },
+	{
+        "pid":"11",
+		"brand":"Piedmont",
+		"title": "GIACOMO FENOCCHIO ROERO ARNEIS",
+        "description": "The light hay colouring is loaded with greenish reflections. The fragrance is soft and complex, especially inviting with aromas hinting broom, camomile and fresh fruit. The flavour is pleasantly tangy, full and very persistent.",
+        "imgSrc": "images/11.png",
+        "type": "white",
+        "price": 25
+    },
+	{
+        "pid":"12",
+		"brand":"Piedmont",
+		"title": "Extra Special Barolo 2011",
+        "description": "Located due south of Alba and the River Tanaro, Barolo is Piedmont's and one of Italy's most famous wine DOCGs, the highest level of wine quality designations.",
+        "imgSrc": "images/12.jpg",
+        "type": "red",
+        "price": 78
+    },
+	{
+        "pid":"13",
+		"brand":"Austria",
+		"title": "F.X. Pichler Riesling Smaragd Kellerberg 2009",
+        "description": "Offering lots of honey, cream and spice, this shows good focus to its ripe, rich fruit flavors, including peach, apricot jam and glazed citrus. The long finish is bright and spicy. Drink now through 2018.",
+        "imgSrc": "images/13.jpg",
+        "type": "white",
+        "price": 110
+    },
+	{
+        "pid":"14",
+		"brand":"Austria",
+		"title": "Hirtzberger Steinterrassen Riesling Federspiel Wachau 2011",
+        "description": "Smoky, rich and lush for the style, with flavors of white currant, wild plum and red peach. Crushed stone and spice appear on the vibrant finish. Drink now through 2018.",
+        "imgSrc": "images/14.jpg",
+        "type": "white",
+        "price": 125
+    },
+	{
+        "pid":"15",
+		"brand":"Austria",
+		"title": "Krutzler Deutsch-Schutzen Perwolff Blaufrankisch",
+        "description": "A number of critics have rated this Burgenland wine extremely highly: the 2014 vintage was given a score of 91 by Falstaff Magazin.",
+        "imgSrc": "images/15.jpg",
+        "type": "red",
+        "price": 250
+    },
+	{
+        "pid":"16",
+		"brand":"Austria",
+		"title": "Rudi Pichler - Riesling Achleithen 2007",
+        "description": "A number of critics have rated this Wachau wine extremely highly: the 2014 vintage was given a score of 95 by The Wine Advocate and the 2011 vintage was given a score of 90 by Wine Spectator.",
+        "imgSrc": "images/wine1.jpg",
+        "type": "white",
+        "price": 250
+    },
+	{
+        "pid":"17",
+		"brand":"Germany",
+		"title": "2013 BLEES-FERBER RIESLING AUSLESE",
+        "description": "This Riesling Auslese from Piesport has the aroma of fresh cut tropical fruits and unfolds in the mouth with flavors of cotton candy. Aromas of ripe citrus and vanilla, showcasing the distinctive Mosel minerality. Flavors that resemble the childhood fair with notes of sour apple and cotton candy on the finish.",
+        "imgSrc": "images/17.jpg",
+        "type": "white",
+        "price": 115
+    },
+	{
+        "pid":"18",
+		"brand":"Germany",
+		"title": "Weingut Franz Kunstler Hochheimer Holle Riesling Beerenauslese",
+        "description": "This is the second most highly rated Hochheim am Main wine (based on critic scores): the 1999 vintage was given a score of 95 by Wine Spectator.",
+        "imgSrc": "images/18.jpg",
+        "type": "white",
+        "price": 150
+    },
+	{
+        "pid":"19",
+		"brand":"Germany",
+		"title": "Heidemanns-Bergweiler Riesling",
+        "description": "This full-bodied Dry Riesling is a typical wine for the German market. Just very few wines in dry German Riesling Style get exported to the US. The Dr. Heidemanns-Bergweiler Dry Riesling is one of the best selling Dry German Rieslings in the US-market",
+        "imgSrc": "images/19.jpg",
+        "type": "white",
+        "price": 250
+    },
+	{
+        "pid":"20",
+		"brand":"Germany",
+		"title": "Weingut Donnhoff Riesling Trocken",
+        "description": "This is the ninth most sought-after wine from the region (in terms of user searches). The popularity of this wine has increased considerably over the past year.",
+        "imgSrc": "images/20.jpg",
+        "type": "white",
+        "price": 150
     }
 ]
