@@ -2,14 +2,14 @@
     {
         "title": "Wine 1",
         "description": "This is a nice wine!",
-        "imgSrc": "images/wine1.jpg",
+        "imgSrc": "images/oyster bay wine.jpg",
         "type": "red",
         "price": 5.0
     },
     {
         "title": "Wine 2",
         "description": "This is also a nice wine!",
-        "imgSrc": "images/wine2.jpg",
+        "imgSrc": "images/oyster bay wine.jpg",
         "type": "white",
         "price": 5.0
     }
