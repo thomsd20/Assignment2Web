@@ -1,10 +1,15 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const path = require("path");
 const port = 3000;
 
 var products = require('./scripts/server/products');
 
+app.use( bodyParser.json() );
+app.use( bodyParser.urlencoded({
+    extended: true
+}));
 app.use("/", express.static(__dirname));
 
 app.get('/', (request, response) => {
@@ -20,7 +25,16 @@ app.set('json spaces', 4);
 app.get('/productdata', (request, response) => {
     response.setHeader('Content-Type', 'application/json');
     products.loadProducts().then((json) => {
-        console.log("prod: ", json);
+        //console.log("prod: ", json);
+        response.send(JSON.stringify(json));
+    });
+});
+
+app.post('/productdata', (request, response) => {
+    response.setHeader('Content-Type', 'application/json');
+    //console.log("request: ", request.query);
+    products.loadProducts(request.query['filters']).then((json) => {
+        //console.log("returning json: ", json);
         response.send(JSON.stringify(json));
     });
 });
