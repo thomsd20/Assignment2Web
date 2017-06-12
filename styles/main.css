@@ -228,6 +228,11 @@ h1:after {
   padding: 10px;
 }
 
+/* Set colour of plus button for adding to cart */
+.addToCart:hover {
+  color: green;
+}
+
 
 .deal img, .deal2 img{
   width:100%;
