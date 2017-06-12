@@ -26,10 +26,10 @@
   </nav>
 
 
-<div class="bg1">
+<div class="bgmain" style="height:780px;">
   <div class = "container">
 
-    <form class="signup">
+    <form class="signup" >
     <div class="form">
       <label for="exampleInputName2">Name</label>
       <input type="text" class="form-control" id="name">
@@ -44,22 +44,33 @@
 
     <div class="form">
       <label for="exampleInputEmail2">Email</label>
-      <input type="email" class="form-control" id="email">
+      <input type="text" class="form-control" id="email">
+      <p id="error3" style="line-height: 20px; color: red;"></p>
+    </div>
+
+    <div class="form">
+      <label for="exampleInputEmail2">Date of Birth</label>
+      <input type="date" class="form-control" id="myDate" value="1996-06-08">
+      <p id="error4" style="line-height: 20px; color: red;"></p>
+    </div>
+
+    <div class="form">
+      <label for="exampleInputEmail2">Gender</label>
+      <div><input type="radio" name="gender" id="myRadio" value="male" checked>Male<input type="radio" name="gender" id="myRadio" value="female">Female</div>
+
     </div>
 
     <div class="form">
         <label>
           <input type="checkbox" id="checkbox"> I agree to receive news letters from this page.
         </label>
-        <p id="error3" style="line-height: 20px; color: red;"></p>
+        <p id="error5" style="line-height: 20px; color: red;"></p>
       </div>
     <button class="btn btn-default form" onclick="valify()">Submit</button>
     </form>
 
   </div>
 </div>
-
-
 
 <footer class="footer">
   <div class="footerlinks">
@@ -72,6 +83,55 @@
 </div>
 </footer>
 
+<script>
+  
+/*Javascript for form validation of sign up page*/
+function valify(){
+  /*Get value of each input fields of the form*/
+  var name = document.getElementById("name").value;
+  var surname = document.getElementById("surname").value;
+  var email = document.getElementById("email").value;
+  var checkbox = document.getElementById("checkbox").checked;
+  var date = document.getElementById("myDate").value;
+  var atpos = email.indexOf("@");
+  var dotpos = email.lastIndexOf(".");
+/*Set the html of targets(error message) to "" at the beginning*/
+  document.getElementById("error1").innerHTML ="";
+  document.getElementById("error2").innerHTML ="";
+  document.getElementById("error3").innerHTML ="";
+  document.getElementById("error4").innerHTML ="";
+  document.getElementById("error5").innerHTML ="";
+
+/*When there is any field empty, display error message*/
+  if(name.length == 0 || surname.length == 0 || email.length == 0){
+    alert("Please enter information in all fields")
+  }
+  else if (name.length < 5) { /*When the input name is shorter than 5 letters, set the html of target to error message*/
+    /*document.getElementById("error1").innerHTML = "Name must be at least 3 letters";*/
+    alert("Name must be at least 3 letters");
+  }
+  else if (surname.length < 8) { /*When the input surname is shorter than 8 letters, set the html of target to error message*/
+    //document.getElementById("error2").innerHTML = "Surname must be at least 5 letters";
+    alert("Surname must be at least 5 letters");
+  }
+  else if (atpos<1 || dotpos<atpos+4 || dotpos+2>=email.length) { /*When the input email is not correct, set the html of target to error message*/
+    //document.getElementById("error3").innerHTML = "Please enter valid email address";
+    alert("Please enter valid email address");
+  }
+  else if (date.length < 8) { /*When the input date of birth is not complete, set the html of target to error message*/
+    //document.getElementById("error4").innerHTML = "Please enter complete date of birth";
+    alert("Please enter complete date of birth");
+  }
+  else if (checkbox == false) { /*When the checkbox is not checked, set the html of target to error message*/
+    //document.getElementById("error5").innerHTML = "Please agree to sign up";
+    alert("Please agree to sign up");
+  }
+  else{ /*If everything valid, display success message*/
+    alert("Signed up successfully")
+  }
+}
+
+</script>
 
 </body>
 </html>
