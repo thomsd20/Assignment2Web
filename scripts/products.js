@@ -11,19 +11,20 @@ function loadProducts(filterTypes) { // Array of current type filters
     if (filterTypes) {
         // Highlight selected type
         $(".category").removeClass("selectedCategory");
-        if(filterTypes[0] == "all"){
-            $("#nofilter").addClass("selectedCategory");
-        } else {
-            $("#" + filterTypes[0]).addClass("selectedCategory");
-        }
+        $("#" + filterTypes[0]).addClass("selectedCategory");
+        
         var filterStr = "";
-        for (var t = 0; t < filterTypes.length; t++) {
-            if (t === filterTypes.length - 1) {
-                filterStr += filterTypes[t];
-            } else {
-                filterStr += filterTypes[t] + ",";
+        // If filter is all dont try anf filter just display all products
+        if (filterTypes[0] !== "all") {
+            for (var t = 0; t < filterTypes.length; t++) {
+                if (t === filterTypes.length - 1) {
+                    filterStr += filterTypes[t];
+                } else {
+                    filterStr += filterTypes[t] + ",";
+                }
             }
         }
+
         $.ajax({
             url: "/productdata?filters=" + encodeURIComponent(filterStr),
             type: "POST",

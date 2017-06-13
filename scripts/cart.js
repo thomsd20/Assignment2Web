@@ -38,6 +38,7 @@ function removeFromCart(product) {
 function removeFromCartClick(data){
     var prod = data.data.product;
     removeFromCart(prod);
+    location.reload(); // Reload the page
 }
 
 function displayCart(cartData) {

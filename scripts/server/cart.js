@@ -24,15 +24,14 @@ exports.addProductToCart = function (product, qty) {
     });
 }
 
-exports.removeProductFromCart = function (product) {
-    console.log("Removing product: ", product);
+exports.removeProductFromCart = function (productData) {
+    var product = JSON.parse(productData);
     return new Promise((resolve, reject) => {
         try {
             cartDB.reload();
             var items = cartDB.getData('/cart/items');
             for(var i = 0; i < items.length; i++){
-                if(items[i].pid === product.pid){
-                    console.log("Removing pid: ", product.pid);
+                if(items[i].pid == product.pid){
                     cartDB.delete("/cart/items[" + i + "]");
                 }
             }

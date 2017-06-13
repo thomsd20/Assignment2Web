@@ -47,7 +47,6 @@ app.get('/cart', (request, response) => {
 app.get('/cart/current', (request, response) => {
     response.setHeader('Content-Type', 'application/json');
     cart.loadCart().then((json) => {
-        //console.log("Returning Cart: ", json);
         response.send(JSON.stringify(json));
     });
 });
