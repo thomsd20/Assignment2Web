@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="styles/font-awesome/font-awesome.min.css">
   <script type="text/javascript" src="scripts/jquery.js"></script>
   <script src="scripts/products.js"></script>
+  <script src="scripts/cart.js"></script>
 </head>
 
 <body>
@@ -35,9 +36,7 @@
     <div class="categories">
       <button id="white" class="category" onclick="selectedType = 'white'; loadProducts(['white'])">White</button>
       <button id="red" class="category" onclick="selectedType = 'red'; loadProducts(['red'])">Red</button>
-      <button id="rose" class="category" onclick="selectedType = 'rose'; loadProducts(['rose'])">Rose</button>
-      <button id="sparkling" class="category" onclick="selectedType = 'sparkling'; loadProducts(['sparkling'])">Sparkling</button>
-      <button id="fortified" class="category" onclick="selectedType = 'fortified'; loadProducts(['fortified'])">Fortified</button>
+      <button id="nofilter" class="category" onclick="selectedType = 'all'; loadProducts(['all'])">All</button>
     </div>
     <div class="row" id="productsDiv">
       <!-- Products will be added by jQuery here-->
@@ -96,9 +95,9 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>-->
+        </div>-->
+      <!--</div>-->
+    </div>
 
   </div>
 

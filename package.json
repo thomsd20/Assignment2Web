@@ -4,7 +4,8 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "node-json-db": "^0.7.3"
   },
   "devDependencies": {},
   "scripts": {

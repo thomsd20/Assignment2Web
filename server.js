@@ -5,6 +5,7 @@ const path = require("path");
 const port = 3000;
 
 var products = require('./scripts/server/products');
+var cart = require('./scripts/server/cart');
 
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded({
@@ -41,6 +42,29 @@ app.post('/productdata', (request, response) => {
 
 app.get('/cart', (request, response) => {
     response.sendFile(path.join(__dirname + '/shoppingcart.html'));
+});
+
+app.get('/cart/current', (request, response) => {
+    response.setHeader('Content-Type', 'application/json');
+    cart.loadCart().then((json) => {
+        //console.log("Returning Cart: ", json);
+        response.send(JSON.stringify(json));
+    });
+});
+
+app.post('/cart/add', (request, response) => {
+    response.setHeader('Content-Type', 'application/json');
+    cart.addProductToCart(request.query['product'], request.query['qty']).then((cart) => {
+        response.send(JSON.stringify(cart));
+    });
+});
+
+app.delete('/cart/remove', (request, response) => {
+    response.setHeader('Content-Type', 'application/json');
+    cart.removeProductFromCart(request.query['product']).then((cart) => {
+        response.status(200);
+        response.send(JSON.stringify(cart));
+    });
 });
 
 app.listen(port, (err) => {

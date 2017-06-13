@@ -11,11 +11,14 @@ function loadProducts(filterTypes) { // Array of current type filters
     if (filterTypes) {
         // Highlight selected type
         $(".category").removeClass("selectedCategory");
-        $("#"+filterTypes[0]).addClass("selectedCategory");
-
+        if(filterTypes[0] == "all"){
+            $("#nofilter").addClass("selectedCategory");
+        } else {
+            $("#" + filterTypes[0]).addClass("selectedCategory");
+        }
         var filterStr = "";
-        for(var t = 0; t < filterTypes.length; t++){
-            if(t === filterTypes.length-1){
+        for (var t = 0; t < filterTypes.length; t++) {
+            if (t === filterTypes.length - 1) {
                 filterStr += filterTypes[t];
             } else {
                 filterStr += filterTypes[t] + ",";
@@ -41,11 +44,11 @@ function displayProducts(data) {
     $productsDiv.empty();
     for (var i = 0; i < data.length; i++) {
         var $rowDiv;
-        if(i % 2 === 0){
+        if (i % 2 === 0) {
             $rowDiv = $("<div>").attr("class", "row");
         }
         //<div class="col-md-6" style="height:320px; margin-top:20px;margin-left:0px;">
-        var $div = $("<div>").attr("class", "col-md-8").attr("style", "height:320px; margin-top:20px;margin-left:0px;");
+        var $div = $("<div>").attr("class", "col-md-6").attr("style", "height:320px; margin-top:20px;margin-left:0px;");
         // <div class="thumbnail">
         var $thumbnailDiv = $("<div>").attr("class", "thumbnail");
         // <div class="row" style="height:350px;">
@@ -69,9 +72,14 @@ function displayProducts(data) {
         var $viewMoreDiv = $("<div>").attr("class", "col-md-6 col-sm-6").attr("style", "padding-top:5px;");
         $viewMoreDiv.append($("<a>").attr("href", "").text("View More"));
 
+        var self = this;
+
         // <div class="col-md-6 col-sm-6">
         var $addToCartDiv = $("<div>").attr("class", "col-md-6 col-sm-6");
-        $addToCartDiv.append($("<button>").attr("class", "btn btn-danger right").text("+ Add to Cart"));
+        $addToCartDiv.append($("<button>")
+            .attr("class", "btn btn-danger right")
+            .text("+ Add to Cart")
+            .click({ "product": data[i], "qty": 1 }, addToCartClick));
 
         // Add View and add to cart buttons to the control div
         $controlDiv.append($viewMoreDiv);
@@ -97,15 +105,22 @@ function displayProducts(data) {
     }
 }
 
-        /*var $link = $("<a href='#'>");
-        var $div = $("<div>", { "class": "product" });
-        $("<img>").attr("src", data[i].imgSrc).attr("title", data[i].title).appendTo($div);
-        var $display = $("<div>", { "class": "dealtext" });
-        var $price = $("<h2>").text("$" + data[i].price).appendTo($display);
-        $("<span>").attr("class", "fa fa-plus-circle pull-right addToCart").attr("aria-hidden", "true").appendTo($price);
-        $("<h4>").text(data[i].title).appendTo($display);
-        $div.append($display);
-        $productsDiv.append($div);*/
+function addToCartClick(data) {
+    var product = data.data.product;
+    var qty = data.data.qty;
+
+    addProductToCart(product, qty);
+}
+
+/*var $link = $("<a href='#'>");
+var $div = $("<div>", { "class": "product" });
+$("<img>").attr("src", data[i].imgSrc).attr("title", data[i].title).appendTo($div);
+var $display = $("<div>", { "class": "dealtext" });
+var $price = $("<h2>").text("$" + data[i].price).appendTo($display);
+$("<span>").attr("class", "fa fa-plus-circle pull-right addToCart").attr("aria-hidden", "true").appendTo($price);
+$("<h4>").text(data[i].title).appendTo($display);
+$div.append($display);
+$productsDiv.append($div);*/
 
 function addToCart(product) {
 
