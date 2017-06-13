@@ -277,7 +277,7 @@ h1:after {
   border: 2px solid #ffb266;
   text-decoration: none;
   text-align: center;
-  margin-left: 8px;
+  margin-left: 15px;
 }
 
 .category:hover{
@@ -294,7 +294,7 @@ h1:after {
 
 .categories{
   margin:20px auto;
-  width:570px;
+  width:370px;
 }
 
 .thumbnail{
