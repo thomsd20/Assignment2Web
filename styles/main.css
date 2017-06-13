@@ -285,6 +285,13 @@ h1:after {
   color:white;
   transition: color 0.4s, background-color 0.4s;
 }
+
+.selectedCategory {
+  background-color: #ffb266;
+  color:white;
+  transition: color 0.4s, background-color 0.4s;
+}
+
 .categories{
   margin:20px auto;
   width:570px;
