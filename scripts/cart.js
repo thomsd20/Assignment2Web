@@ -27,6 +27,14 @@ function addProductToCart(product, qty) {
     });
 }
 
+function modifyCartProduct(product){
+    console.log("Sending product: ", product);
+    $.ajax({
+        url: "/cart/modify?product=" + encodeURIComponent(JSON.stringify(product)) + "&qty=" + encodeURIComponent(product.qty),
+        type: "PUT"
+    });
+}
+
 function removeFromCart(product) {
     console.log("Removing product: ", product);
     $.ajax({
@@ -50,7 +58,7 @@ function displayCart(cartData) {
         var $itemRow = $("<div>").attr("class", "row");
         $itemRow.append(
             $("<div>").attr("class", "col-xs-2")
-                .append($("<img>").attr("class", "img-responsive").attr("src", cartData[i].imgSrc))
+                .append($("<img>").attr("class", "img-responsive").attr("style", "width: 100px; height: 200px;").attr("src", cartData[i].imgSrc))
         ).append(
             $("<div>").attr("class", "col-xs-4")
                 .append($("<h4>").attr("class", "product-name").html("<strong>" + cartData[i].title + "</strong>"))
@@ -63,7 +71,10 @@ function displayCart(cartData) {
                         .append($("<span>").attr("class", "text-muted").html("<strong>x</string>")))
                 ).append(
                 $("<div>").attr("class", "col-xs-4")
-                    .append($("<input>").attr("type", "text").attr("class", "form-control input-sm").attr("value", "1"))
+                    //.append($("<input>").attr("type", "text").attr("class", "form-control input-sm").attr("value", "1"))
+                    .append(
+                        $("<input>").attr("id", "spinner"+cartData[i].pid)
+                    )
                 ).append(
                 $("<div>").attr("class", "col-xs-2")
                     .append($("<button>").attr("type", "button").attr("class", "btn btn-link btn-xs").html(
@@ -72,5 +83,11 @@ function displayCart(cartData) {
                 )
             );
         $cartList.append($itemRow);
+
+        $("#spinner"+cartData[i].pid).spinner().on("spinstop", null, {"product": cartData[i]}, function(e, ui){
+            console.log("changed:", $(this).spinner("value"));
+            e.data.product.qty = $(this).spinner("value");
+            modifyCartProduct(e.data.product);
+        });
     }
 }

@@ -51,6 +51,13 @@ app.get('/cart/current', (request, response) => {
     });
 });
 
+app.put('/cart/modify', (request, response) => {
+    response.setHeader('Content-Type', 'application/json');
+    cart.modifyProductInCart(request.query['product'], request.query['qty']).then((cart) => {
+        response.send(JSON.stringify(cart));
+    });
+});
+
 app.post('/cart/add', (request, response) => {
     response.setHeader('Content-Type', 'application/json');
     cart.addProductToCart(request.query['product'], request.query['qty']).then((cart) => {

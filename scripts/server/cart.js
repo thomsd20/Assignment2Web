@@ -24,14 +24,40 @@ exports.addProductToCart = function (product, qty) {
     });
 }
 
+exports.modifyProductInCart = function (productData) {
+    var product = JSON.parse(productData);
+    console.log("Changing Product: ", product);
+    return new Promise((resolve, reject) => {
+        try {
+            cartDB.reload();
+            var items = cartDB.getData("/cart/items");
+            for(var i = 0; i < items.length; i++){
+                if(items[i].pid === product.pid){
+                    var cartItem = {
+                        "pid": product.pid,
+                        "qty": product.qty
+                    };
+                    cartDB.save("/cart/items[" + i + "]", cartItem);
+                }
+            }
+            //cartDB.push("/" + JSON.parse(product).pid, { "pid": JSON.parse(product).pid, "qty": qty });
+            cartDB.save();
+            resolve(cartDB.getData('/'));
+        } catch (error) {
+            console.error(error);
+            reject(error);
+        }
+    });
+}
+
 exports.removeProductFromCart = function (productData) {
     var product = JSON.parse(productData);
     return new Promise((resolve, reject) => {
         try {
             cartDB.reload();
             var items = cartDB.getData('/cart/items');
-            for(var i = 0; i < items.length; i++){
-                if(items[i].pid == product.pid){
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].pid == product.pid) {
                     cartDB.delete("/cart/items[" + i + "]");
                 }
             }
