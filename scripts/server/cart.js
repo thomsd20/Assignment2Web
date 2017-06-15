@@ -37,7 +37,7 @@ exports.modifyProductInCart = function (productData) {
                         "pid": product.pid,
                         "qty": product.qty
                     };
-                    cartDB.save("/cart/items[" + i + "]", cartItem);
+                    cartDB.push("/cart/items[" + i + "]", cartItem);
                 }
             }
             //cartDB.push("/" + JSON.parse(product).pid, { "pid": JSON.parse(product).pid, "qty": qty });

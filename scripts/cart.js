@@ -51,7 +51,8 @@ function removeFromCartClick(data){
 
 function displayCart(cartData) {
     // Handle HTML Rendering
-    console.log("cart loaded...", cartData);
+    //console.log("cart loaded...", cartData);
+    var totalPrice = 0;
     var $cartList = $("#cartList");
     $cartList.empty();
     for (var i = 0; i < cartData.length; i++) {
@@ -84,10 +85,26 @@ function displayCart(cartData) {
             );
         $cartList.append($itemRow);
 
-        $("#spinner"+cartData[i].pid).spinner().on("spinstop", null, {"product": cartData[i]}, function(e, ui){
-            console.log("changed:", $(this).spinner("value"));
+        // Setup spinner for managing the quantity of our cart items
+        $("#spinner"+cartData[i].pid).spinner({ min: 0 }).spinner("value", cartData[i].qty).on("spinstop", null, {"product": cartData[i], "cartData": cartData}, function(e, ui){
+            //console.log("changed:", $(this).spinner("value"));
             e.data.product.qty = $(this).spinner("value");
+
+            $("#cartTotal").html("Total <strong>$" + getCartTotal(e.data.cartData) + "</strong>");
+
             modifyCartProduct(e.data.product);
         });
+
+        totalPrice += (cartData[i].price * cartData[i].qty);
     }
+
+    $("#cartTotal").html("Total <strong>$" + getCartTotal(cartData) + "</strong>");
+}
+
+function getCartTotal(cartData){
+    var total = 0;
+    cartData.forEach( (item) => {
+        total += item.price * item.qty;
+    });
+    return total;
 }

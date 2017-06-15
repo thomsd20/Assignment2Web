@@ -5,12 +5,11 @@
 Developed using HTML, Javascript and CSS.
 
 Uses various libraries for JS and CSS:
-- JQuery
+- JQuery & JQuery UI
 - Bootstrap CSS
 - NodeJS
     - Express
     - File System Functions
-- Font Awesome
 
 ## Running App
 1. Open command line and navigate to app directory
