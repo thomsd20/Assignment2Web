@@ -31,7 +31,7 @@
         "imgSrc": "images/03.jpg",
         "type": "white",
         "price": 120,
-        "feature": true,
+        "feature": false,
         "deal": false,
 		"link":"http://clubdgv.blogspot.co.nz/2016/09/le-manoir-sancerre-mellot-val-de-loire.html"
     },
@@ -79,7 +79,7 @@
         "imgSrc": "images/07.png",
         "type": "red",
         "price": 138,
-        "feature": false,
+        "feature": true,
         "deal": false,
 		"link":"https://www.wine-searcher.com/wine-92070-2013-craggy-range-le-sol-syrah-gimblett-gravels-new-zealand"
     },
@@ -140,7 +140,7 @@
         "type": "red",
         "price": 78,
         "feature": false,
-        "deal": false,
+        "deal": true,
 		"link":"https://www.wine-searcher.com/wine-265569-2011-asda-extra-special-barolo-docg-piedmont-italy"
     },
 	{
@@ -212,7 +212,7 @@
         "type": "white",
         "price": 150,
         "feature": false,
-        "deal": true,
+        "deal": false,
 		"link":"https://www.wine-searcher.com/wine-90724-0001-weingut-franz-kunstler-hochheimer-holle-riesling-beerenauslese-rheingau-germany"
     },
 	{

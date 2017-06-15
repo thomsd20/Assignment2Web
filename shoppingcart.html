@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Home Page</title>
-  <link rel="stylesheet" href="styles/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Limelight|Lobster|Ubuntu+Condensed|Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script type="text/javascript" src="scripts/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles/jquery-ui.css">
-  <script type="text/javascript" src="scripts/jquery-ui.js"></script>
-  <script src="scripts/cart.js"></script>
-  <script type="text/javascript">
-	$(document).ready(function() {
-		loadCart();
-	});
-  </script>
+	<meta charset="utf-8">
+	<title>Shopping Cart - Wall Street Wines</title>
+	<link rel="stylesheet" href="styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Limelight|Lobster|Ubuntu+Condensed|Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	 crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles/jquery-ui.css">
+	<script type="text/javascript" src="scripts/jquery-ui.js"></script>
+	<script src="scripts/cart.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			loadCart();
+
+			$("#keepShopping").click(() => {
+				window.location.href = "/products"
+			});
+		});
+	</script>
 </head>
+
 <body>
 
-  <nav class="nav">
+	<nav class="nav">
 
-  <ul>
-    <li class = "logo">Wall Street Wines</li>
-    <div class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Products.html">Products</a></li>
-      <li><a href="SignUp.html">Sign Up</a></li>
-      <li><a href="About.html">About</a></li>
-    </div>
-    <div class="cart"><a href="shoppingcart.html" class="btn btn-info btn-lg" id="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></div>
-  </ul>
-  </nav>
+		<ul>
+			<li class="logo">Wall Street Wines</li>
+			<div class="navlinks">
+				<li><a href="/">Home</a></li>
+				<li><a href="products">Products</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+				<li><a href="/about">About</a></li>
+			</div>
+			<div class="cart"><a href="/cart" class="btn btn-info btn-lg" id="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></div>
+		</ul>
+	</nav>
 
 
-<div class="shoppingCart">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="panel panel-info" style="border-color:#efefef;">
-				<div class="panel-heading"style="background-color:white; color:#ffb266; border-color:#efefef;">
-					<div class="panel-title">
-						<div class="row">
-							<div class="col-xs-6">
-								<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
-							</div>
-							<div class="col-xs-3" style="float:right;">
-								<button type="button" class="btn btn-primary btn-sm btn-block" style="background-color:#a0a0a0; border-width:0;">
-									<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+	<div class="shoppingCart">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-info" style="border-color:#efefef;">
+					<div class="panel-heading" style="background-color:white; color:#ffb266; border-color:#efefef;">
+						<div class="panel-title">
+							<div class="row">
+								<div class="col-xs-6">
+									<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
+								</div>
+								<div class="col-xs-3" style="float:right;">
+									<button type="button" id="keepShopping" class="btn btn-primary btn-sm btn-block" style="background-color:#a0a0a0; border-width:0;">
+									<span class="glyphicon glyphicon-share-alt"></span>Continue shopping
 								</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="panel-body" id="cartList">
-					<!-- Cart will be displayed here -->
-				</div>
-				<div class="panel-footer">
-					<div class="row text-center">
-						<div class="col-xs-9">
-							<h4 class="text-right" id="cartTotal">Total <strong>$50.00</strong></h4>
-						</div>
-						<div class="col-xs-3">
-							<button type="button" class="btn btn-success btn-block" style="background-color:#ff6911;border-width:0;">
+					<div class="panel-body" id="cartList">
+						<!-- Cart will be displayed here -->
+					</div>
+					<div class="panel-footer">
+						<div class="row text-center">
+							<div class="col-xs-9">
+								<h4 class="text-right" id="cartTotal">Total <strong>$50.00</strong></h4>
+							</div>
+							<div class="col-xs-3">
+								<button type="button" class="btn btn-success btn-block" style="background-color:#ff6911;border-width:0;">
 								Checkout
 							</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 
-<footer class="footer">
-  <div class="footerlinks">
-  <a href="index.html">Home</a>
-  <a href="Products.html">Our Products</a>
-  <a href="SignUp.html">Sign Up</a>
-  <a href="About.html">About Us</a>
-  <a href="shoppingcart.html">View Shopping Cart</a>
-  <p>Internet and Website Development Assignment2 Wall Street Wines Online Store Page <br>© Copyright 2017 Daniel Thomsen, Lizhong Zhang, Weibin Xiong</p>
-</div>
-</footer>
+	<footer class="footer">
+		<div class="footerlinks">
+			<a href="/">Home</a>
+			<a href="/products">Our Products</a>
+			<a href="/signup">Sign Up</a>
+			<a href="/about">About Us</a>
+			<a href="/cart">View Shopping Cart</a>
+			<p>Internet and Website Development Assignment2 Wall Street Wines Online Store Page <br>© Copyright 2017 Daniel Thomsen,
+				Lizhong Zhang, Weibin Xiong</p>
+		</div>
+	</footer>
 </body>
+
 </html>

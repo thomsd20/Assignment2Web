@@ -3,16 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Products Page</title>
+  <title>Products Page - Wall Street Wines</title>
   <link rel="stylesheet" href="styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Limelight|Lobster|Ubuntu+Condensed|Open+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" src="scripts/jquery.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles/font-awesome/font-awesome.min.css">
-  <script type="text/javascript" src="scripts/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
   <script src="scripts/products.js"></script>
   <script src="scripts/cart.js"></script>
 </head>
@@ -23,12 +24,12 @@
     <ul>
       <li class="logo">Wall Street Wines</li>
       <div class="navlinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Products.html">Products</a></li>
-        <li><a href="SignUp.html">Sign Up</a></li>
-        <li><a href="About.html">About</a></li>
-      </div>
-      <div class="cart"><a href="shoppingcart.html" class="btn btn-info btn-lg" id="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></div>
+				<li><a href="/">Home</a></li>
+				<li><a href="products">Products</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+				<li><a href="/about">About</a></li>
+			</div>
+      <div class="cart"><a href="/cart" class="btn btn-info btn-lg" id="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></div>
     </ul>
   </nav>
 
@@ -43,63 +44,7 @@
     <div class="row" id="productsDiv">
       <!-- Products will be added by jQuery here-->
     </div>
-
-    <!--Code for product display design-->
-    <!--<div class="row">
-      <div class="col-md-6" style="height:320px; margin-top:20px;margin-left:0px;">
-        <div class="thumbnail">
-          <div class="row" style="height:350px;">
-            <div class="productimg col-md-4" style="height:300px;">
-              <img src="images/oyster bay wine.jpg" alt="">
-            </div>
-            <div class="col-md-8" style="height:300px;">
-              <div class="producttext" style="height:210px; padding-left:30px;">
-                <h2>$10.99</h2>
-                <h4>Oyster Bay Red Wine</h4>
-                <p>Juicy, fresh black plum with a hint of vanilla, bright red currants and alluring spice. High ranked Oyster
-                  Bay Wine gives you perfect taste.</p>
-              </div>
-              <div class="control" style="height:130px;">
-                <hr class="line">
-                <div class="col-md-6 col-sm-6" style="padding-top:5px;">
-                  <a href="">View More</a>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <a href=""><button class="btn btn-danger right" >+ Add to Cart</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6" style="height:320px; margin-top:20px;margin-left:0px;">
-        <div class="thumbnail">
-          <div class="row" style="height:350px;">
-            <div class="productimg col-md-4" style="height:300px;">
-              <img src="images/oyster bay wine.jpg" alt="">
-            </div>
-            <div class="col-md-8" style="height:300px;">
-              <div class="producttext" style="height:210px; padding-left:30px;">
-                <h2>$10.99</h2>
-                <h4>Oyster Bay Red Wine</h4>
-                <p>Juicy, fresh black plum with a hint of vanilla, bright red currants and alluring spice. High ranked Oyster
-                  Bay Wine gives you perfect taste.</p>
-              </div>
-              <div class="control" style="height:130px;">
-                <hr class="line">
-                <div class="col-md-6 col-sm-6" style="padding-top:5px;">
-                  <a href="">View More</a>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                  <a href=""><button class="btn btn-danger right" >+ Add to Cart</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>-->
-      <!--</div>-->
-    </div>
+  </div>
 
   </div>
 
@@ -107,11 +52,11 @@
 
   <footer class="footer">
     <div class="footerlinks">
-      <a href="index.html">Home</a>
-      <a href="Products.html">Our Products</a>
-      <a href="SignUp.html">Sign Up</a>
-      <a href="About.html">About Us</a>
-      <a href="shoppingcart.html">View Shopping Cart</a>
+      <a href="/">Home</a>
+      <a href="/products">Our Products</a>
+      <a href="/signup">Sign Up</a>
+      <a href="/about">About Us</a>
+      <a href="/cart">View Shopping Cart</a>
       <p>Internet and Website Development Assignment2 Wall Street Wines Online Store Page <br>© Copyright 2017 Daniel Thomsen,
         Lizhong Zhang, Weibin Xiong</p>
     </div>

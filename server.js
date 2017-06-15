@@ -73,6 +73,14 @@ app.delete('/cart/remove', (request, response) => {
     });
 });
 
+app.get('/about', (request, response) => {
+    response.sendFile(path.join(__dirname + '/About.html'));
+});
+
+app.get('/signup', (request, response) => {
+    response.sendFile(path.join(__dirname + '/SignUp.html'));
+});
+
 app.listen(port, (err) => {
     if (err) {
         return console.log('something bad happened', err);

@@ -5,8 +5,15 @@
   <title>Home Page</title>
   <link rel="stylesheet" href="styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Limelight|Lobster|Ubuntu+Condensed|Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="main.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript" src="scripts/jquery.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+  <script src="scripts/home.js"></script>
 </head>
 <body>
 
@@ -15,12 +22,12 @@
   <ul>
     <li class = "logo">Wall Street Wines</li>
     <div class="navlinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Products.html">Products</a></li>
-      <li><a href="SignUp.html">Sign Up</a></li>
-      <li><a href="About.html">About</a></li>
-    </div>
-    <div class="cart"><a href="shoppingcart.html" class="btn btn-info btn-lg" id="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></div>
+				<li><a href="/">Home</a></li>
+				<li><a href="products">Products</a></li>
+				<li><a href="/signup">Sign Up</a></li>
+				<li><a href="/about">About</a></li>
+			</div>
+    <div class="cart"><a href="/cart" class="btn btn-info btn-lg" id="btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></div>
   </ul>
   </nav>
 
@@ -28,9 +35,8 @@
 
   <div class = "container">
     <div class="hr"><h1 class="subtitle">FEATURE PROCUCTS</h1></div>
-    <div class="deals">
-
-      <a href="#">
+    <div class="deals" id="features">
+      <!--<a href="#">
       <div class= "deal">
         <img src="images/oyster bay wine.jpg" title="Image from https://www.queenstownnz.co.nz/explore/listing/akarua-arrowtown-autumn-festival">
         <div class="dealtext">
@@ -83,7 +89,7 @@
       </div>
       <button class="add">+ Add to cart</button>
     </div>
-  </a>
+  </a>-->
 
     </div>
 </div>
@@ -100,11 +106,11 @@
 
 <div class="bg1">
   <div class = "container">
-  <div class="deals2">
+  <div class="deals2" id="deals">
 
     <div class="hr"><h1>DEAL OF THE DAY</h1></div>
 
-    <a href="#">
+    <!--<a href="#">
     <div class= "deal2">
       <img src="images/oyster bay wine.jpg" title="Image from https://www.queenstownnz.co.nz/explore/listing/akarua-arrowtown-autumn-festival">
       <div class="dealtext">
@@ -157,7 +163,7 @@
     </div>
     <button class="add">+ Add to cart</button>
   </div>
-</a>
+</a>-->
 
   </div>
 </div>
@@ -166,11 +172,11 @@
 
 <footer class="mainfooter">
   <div class="footerlinks">
-  <a href="index.html">Home</a>
-  <a href="Products.html">Our Products</a>
-  <a href="SignUp.html">Sign Up</a>
-  <a href="About.html">About Us</a>
-  <a href="shoppingcart.html">View Shopping Cart</a>
+  <a href="/">Home</a>
+  <a href="/products">Our Products</a>
+  <a href="/signup">Sign Up</a>
+  <a href="/about">About Us</a>
+  <a href="/cart">View Shopping Cart</a>
   <p>Internet and Website Development Assignment2 Wall Street Wines Online Store Page <br>© Copyright 2017 Daniel Thomsen, Lizhong Zhang, Weibin Xiong</p>
 </div>
 </footer>

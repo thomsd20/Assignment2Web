@@ -14,7 +14,7 @@ function loadProducts(filterTypes) { // Array of current type filters
         $("#" + filterTypes[0]).addClass("selectedCategory");
         
         var filterStr = "";
-        // If filter is all dont try anf filter just display all products
+        // If filter is all dont try and filter just display all products
         if (filterTypes[0] !== "all") {
             for (var t = 0; t < filterTypes.length; t++) {
                 if (t === filterTypes.length - 1) {
@@ -71,7 +71,7 @@ function displayProducts(data) {
         $controlDiv.append($("<hr>").attr("class", "line"));
         // <div class="col-md-6 col-sm-6" style="padding-top:5px;">
         var $viewMoreDiv = $("<div>").attr("class", "col-md-6 col-sm-6").attr("style", "padding-top:5px;");
-        $viewMoreDiv.append($("<a>").attr("href", "").text("View More"));
+        $viewMoreDiv.append($("<a>").attr("href", data[i].link).attr("target", "_blank").text("View More"));
 
         var self = this;
 
@@ -110,6 +110,8 @@ function addToCartClick(data) {
     var product = data.data.product;
     var qty = data.data.qty;
 
+    toastr.success("Success", "Item has been added to cart!");
+
     addProductToCart(product, qty);
 }
 
@@ -122,7 +124,3 @@ $("<span>").attr("class", "fa fa-plus-circle pull-right addToCart").attr("aria-h
 $("<h4>").text(data[i].title).appendTo($display);
 $div.append($display);
 $productsDiv.append($div);*/
-
-function addToCart(product) {
-
-}
