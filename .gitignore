@@ -1,0 +1,4 @@
+.projectile
+.vscode/
+node_modules/
+cartDatabase.json
