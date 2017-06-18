@@ -32,9 +32,9 @@ function displayFeatures(data) {
                     $("<h4>").text(data[i].title)
                     )
                 ).append(
-                    $("<button>").attr("class", "add").text("+ Add to Cart").click((event) => {
-                        toastr.success("Success", "Item has been added to cart!");
-                    })
+                    $("<button>").attr("class", "add").text("+ Add to Cart").click(
+                        { "product": data[i], "qty": 1 }, addToCartClick
+                    )
                 )
         ).appendTo($dealsDiv)
     }
@@ -55,9 +55,9 @@ function displayDeals(data) {
                     $("<h4>").text(data[i].title)
                     )
                 ).append(
-                $("<button>").attr("class", "add").text("+ Add to Cart").click((event) => {
-                    console.log("Adding to cart");
-                })
+                    $("<button>").attr("class", "add").text("+ Add to Cart").click(
+                        { "product": data[i], "qty": 1 }, addToCartClick
+                    )
                 )
         ).appendTo($dealsDiv)
     }
